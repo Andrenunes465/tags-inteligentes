@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Maria Dinalva</title>
+  <title>Maria Dinalva - Cartão Digital</title>
   <!-- Ícones do Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
@@ -14,9 +14,10 @@
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
 
+    /* Tela de fundo: Nude mais escurinho / terroso suave */
     body {
-      background: #f4f6f9;
-      color: #1a1a1a;
+      background: #D8C4B6;
+      color: #3D312A;
       min-height: 100vh;
       display: flex;
       justify-content: center;
@@ -24,14 +25,16 @@
       padding: 20px;
     }
 
+    /* Cartão Principal: Nude claro elegante (Linen / Warm Off-White) */
     .card-container {
-      background-color: #ffffff;
+      background-color: #FAF0E6;
       width: 100%;
       max-width: 380px;
       border-radius: 28px;
       padding: 30px 22px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 12px 32px rgba(61, 49, 42, 0.15);
       text-align: center;
+      border: 1px solid #E5D3B3;
     }
 
     /* Perfil */
@@ -40,44 +43,26 @@
       height: 120px;
       border-radius: 50%;
       object-fit: cover;
-      border: 4px solid #2563eb;
+      border: 4px solid #B88B7D;
       margin-bottom: 16px;
-      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+      box-shadow: 0 4px 14px rgba(184, 139, 125, 0.25);
     }
 
     .profile-name {
       font-size: 1.6rem;
       font-weight: 700;
-      color: #0f172a;
+      color: #3D312A;
       margin-bottom: 6px;
     }
 
     .profile-location {
-      font-size: 1rem;
-      color: #64748b;
+      font-size: 0.95rem;
+      color: #7D6356;
       margin-bottom: 24px;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 6px;
-    }
-
-    /* Botão Principal: Salvar na Agenda */
-    .btn-main {
-      background-color: #2563eb;
-      color: #ffffff;
-      width: 100%;
-      padding: 16px;
-      border-radius: 16px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 1.05rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      margin-bottom: 18px;
-      box-shadow: 0 6px 16px rgba(37, 99, 235, 0.25);
     }
 
     /* Lista de Cartões de Informação */
@@ -88,8 +73,8 @@
     }
 
     .info-card {
-      background-color: #f8fafc;
-      border: 1px solid #e2e8f0;
+      background-color: #FFFDF9;
+      border: 1px solid #EFE2D3;
       border-radius: 16px;
       padding: 14px 16px;
       display: flex;
@@ -97,7 +82,12 @@
       justify-content: space-between;
       text-align: left;
       text-decoration: none;
-      color: #1e293b;
+      color: #3D312A;
+      transition: transform 0.1s ease;
+    }
+
+    .info-card:active {
+      transform: scale(0.99);
     }
 
     .info-left {
@@ -121,8 +111,8 @@
     }
 
     .info-details label {
-      font-size: 0.75rem;
-      color: #64748b;
+      font-size: 0.72rem;
+      color: #8C7063;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.5px;
@@ -132,13 +122,14 @@
       font-size: 0.95rem;
       font-weight: 600;
       word-break: break-all;
+      color: #3D312A;
     }
 
     .btn-action {
-      background-color: #e2e8f0;
+      background-color: #A37367;
       border: none;
-      color: #334155;
-      padding: 8px 12px;
+      color: #ffffff;
+      padding: 8px 14px;
       border-radius: 10px;
       font-weight: 600;
       font-size: 0.8rem;
@@ -149,7 +140,7 @@
     }
 
     .btn-whatsapp-bg {
-      background-color: #22c55e;
+      background-color: #25D366;
       color: white;
     }
   </style>
@@ -158,24 +149,19 @@
 
   <div class="card-container">
     <!-- Foto e Nome -->
-    <img src="foto.jpg" alt="Foto de Perfil" class="profile-img">
+    <img src="Foto.jpeg" alt="Foto de Perfil" class="profile-img">
     <h1 class="profile-name">Maria Dinalva</h1>
     <p class="profile-location">
-      <i class="fa-solid fa-location-dot" style="color: #ef4444;"></i> Anápolis - GO
+      <i class="fa-solid fa-location-dot" style="color: #B88B7D;"></i> Anápolis - GO
     </p>
-
-    <!-- Botão de Destaque: Adicionar Contato -->
-    <a href="contato.vcf" class="btn-main" download>
-      <i class="fa-solid fa-user-plus"></i> Salvar na Agenda
-    </a>
 
     <!-- Bloco de Informações Práticas -->
     <div class="info-list">
       
-      <!-- WhatsApp -->
-      <a href="https://wa.me/5562999999999?text=Olá!" target="_blank" class="info-card">
+      <!-- 1. WhatsApp -->
+      <a href="https://wa.me/5562991706923?text=Olá!" target="_blank" class="info-card">
         <div class="info-left">
-          <i class="fa-brands fa-whatsapp" style="color: #22c55e;"></i>
+          <i class="fa-brands fa-whatsapp" style="color: #25D366;"></i>
           <div class="info-details">
             <label>WhatsApp</label>
             <span>(62) 99170-6923</span>
@@ -184,10 +170,10 @@
         <span class="btn-action btn-whatsapp-bg">Mandar Mensagem</span>
       </a>
 
-      <!-- E-mail -->
+      <!-- 2. E-mail -->
       <div class="info-card">
         <div class="info-left">
-          <i class="fa-regular fa-envelope" style="color: #2563eb;"></i>
+          <i class="fa-regular fa-envelope" style="color: #B88B7D;"></i>
           <div class="info-details">
             <label>E-mail</label>
             <span id="email-text">mariadinalva22@gmail.com</span>
@@ -196,10 +182,10 @@
         <button class="btn-action" onclick="copiarTexto('email-text', 'E-mail')">Copiar</button>
       </div>
 
-      <!-- CPF -->
+      <!-- 3. CPF -->
       <div class="info-card">
         <div class="info-left">
-          <i class="fa-solid fa-id-card" style="color: #475569;"></i>
+          <i class="fa-solid fa-id-card" style="color: #8C7063;"></i>
           <div class="info-details">
             <label>CPF</label>
             <span id="cpf-text">165.603.961-34</span>
@@ -208,22 +194,10 @@
         <button class="btn-action" onclick="copiarTexto('cpf-text', 'CPF')">Copiar</button>
       </div>
 
-      <!-- Chave PIX -->
-      <div class="info-card">
+      <!-- 4. Instagram  -->
+      <a href="https://instagram.com/mariadinalva79" target="_blank" class="info-card">
         <div class="info-left">
-          <i class="fa-solid fa-pix" style="color: #00bdae;"></i>
-          <div class="info-details">
-            <label>Chave Pix</label>
-            <span id="pix-key">62991706923</span>
-          </div>
-        </div>
-        <button class="btn-action" onclick="copiarTexto('pix-key', 'Chave PIX')">Copiar</button>
-      </div>
-
-      <!-- Instagram / Rede Social (Opcional) -->
-      <a href="https://instagram.com/usuario" target="_blank" class="info-card">
-        <div class="info-left">
-          <i class="fa-brands fa-instagram" style="color: #e1306c;"></i>
+          <i class="fa-brands fa-instagram" style="color: #E1306C;"></i>
           <div class="info-details">
             <label>Instagram</label>
             <span>@usuario</span>
@@ -231,6 +205,18 @@
         </div>
         <span class="btn-action">Ver Perfil</span>
       </a>
+
+      <!-- 5. Chave PIX  -->
+      <div class="info-card">
+        <div class="info-left">
+          <i class="fa-solid fa-pix" style="color: #00BDAE;"></i>
+          <div class="info-details">
+            <label>Chave Pix</label>
+            <span id="pix-key">62991706923</span>
+          </div>
+        </div>
+        <button class="btn-action" onclick="copiarTexto('pix-key', 'Chave PIX')">Copiar</button>
+      </div>
 
     </div>
   </div>
