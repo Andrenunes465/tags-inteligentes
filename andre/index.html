@@ -1,1 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>André Filho - Cartão Digital</title>
+  <!-- Ícones do Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
 
+    /* Tela de fundo: Azul Marinho elegante */
+    body {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #f8fafc;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    /* Cartão Principal: Azul Marinho estruturado com borda em azul claro */
+    .card-container {
+      background-color: #1e293b;
+      width: 100%;
+      max-width: 380px;
+      border-radius: 28px;
+      padding: 30px 22px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+      text-align: center;
+      border: 1px solid #38bdf8;
+    }
+
+    /* Perfil */
+    .profile-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #38bdf8;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 16px rgba(56, 189, 248, 0.3);
+    }
+
+    .profile-name {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #f8fafc;
+      margin-bottom: 6px;
+    }
+
+    .profile-bio {
+      font-size: 0.9rem;
+      color: #94a3b8;
+      margin-bottom: 24px;
+      line-height: 1.4;
+      padding: 0 10px;
+    }
+
+    /* Lista de Cartões de Informação */
+    .info-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .info-card {
+      background-color: #0f172a;
+      border: 1px solid #334155;
+      border-radius: 16px;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-align: left;
+      text-decoration: none;
+      color: #f8fafc;
+      transition: transform 0.1s ease, border-color 0.2s ease;
+    }
+
+    .info-card:hover {
+      border-color: #38bdf8;
+    }
+
+    .info-card:active {
+      transform: scale(0.99);
+    }
+
+    .info-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      overflow: hidden;
+    }
+
+    .info-left i {
+      font-size: 1.25rem;
+      width: 24px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .info-details {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .info-details label {
+      font-size: 0.72rem;
+      color: #38bdf8;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .info-details span {
+      font-size: 0.95rem;
+      font-weight: 600;
+      word-break: break-all;
+      color: #f8fafc;
+    }
+
+    .btn-action {
+      background-color: #0284c7;
+      border: none;
+      color: #ffffff;
+      padding: 8px 14px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.8rem;
+      cursor: pointer;
+      white-space: nowrap;
+      flex-shrink: 0;
+      margin-left: 8px;
+      transition: background 0.2s;
+    }
+
+    .btn-action:hover {
+      background-color: #0369a1;
+    }
+
+    .btn-whatsapp-bg {
+      background-color: #22c55e;
+      color: white;
+    }
+    
+    .btn-whatsapp-bg:hover {
+      background-color: #16a34a;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card-container">
+    <!-- Foto e Nome -->
+    <img src="foto.jpeg" alt="Foto de Perfil" class="profile-img">
+    <h1 class="profile-name">André Filho</h1>
+    <p class="profile-bio">Estudante de Software Engineering e entusiasta de tecnologia.</p>
+
+    <!-- Bloco de Informações Práticas -->
+    <div class="info-list">
+      
+      <!-- 1. WhatsApp -->
+      <a href="https://wa.me/5562993843810?text=Olá!%20Vim%20pelo%20cartão%20digital." target="_blank" class="info-card">
+        <div class="info-left">
+          <i class="fa-brands fa-whatsapp" style="color: #22c55e;"></i>
+          <div class="info-details">
+            <label>WhatsApp</label>
+            <span>(62) 99384-3810</span>
+          </div>
+        </div>
+        <span class="btn-action btn-whatsapp-bg">Conversar</span>
+      </a>
+
+      <!-- 2. E-mail -->
+      <div class="info-card">
+        <div class="info-left">
+          <i class="fa-regular fa-envelope" style="color: #38bdf8;"></i>
+          <div class="info-details">
+            <label>E-mail</label>
+            <span id="email-text">andrefilhonunesdossantos205@email.com</span>
+          </div>
+        </div>
+        <button class="btn-action" onclick="copiarTexto('email-text', 'E-mail')">Copiar</button>
+      </div>
+
+      <!-- 3. CPF -->
+      <div class="info-card">
+        <div class="info-left">
+          <i class="fa-solid fa-id-card" style="color: #38bdf8;"></i>
+          <div class="info-details">
+            <label>CPF</label>
+            <span id="cpf-text">707.627.031-56</span>
+          </div>
+        </div>
+        <button class="btn-action" onclick="copiarTexto('cpf-text', 'CPF')">Copiar</button>
+      </div>
+
+      <!-- 4. Instagram -->
+      <a href="https://instagram.com/andrefilhonunes11" target="_blank" class="info-card">
+        <div class="info-left">
+          <i class="fa-brands fa-instagram" style="color: #e1306c;"></i>
+          <div class="info-details">
+            <label>Instagram</label>
+            <span>@andrefilhonunes11</span>
+          </div>
+        </div>
+        <span class="btn-action">Ver Perfil</span>
+      </a>
+
+    </div>
+  </div>
+
+  <script>
+    function copiarTexto(idElemento, nomeCampo) {
+      const texto = document.getElementById(idElemento).innerText;
+      navigator.clipboard.writeText(texto).then(() => {
+        alert(nomeCampo + ' copiado para a área de transferência!');
+      });
+    }
+  </script>
+
+</body>
+</html>
